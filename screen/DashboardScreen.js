@@ -14,6 +14,7 @@ import { AuthContext } from "../context/AuthContext";
 import axios from 'axios'
 import { BASE_URL } from "../config";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import WebViewScreen from "./WebViewScreen";
 
 var {width: SCREEN_WIDTH, height: SCREEN_HEIGHT,} = Dimensions.get('window');
 const scale = SCREEN_WIDTH / 320;
@@ -94,6 +95,7 @@ export default function DashboardScreen({navigation}) {
 
             {
                 comments && comments.map((ele) => {
+                    console.log(ele);
                     return (
                         <View style={styles.products} key={ele.survey_id}>
                         <View style={[styles.center, {justifyContent: "space-between"}]}>
@@ -110,7 +112,11 @@ export default function DashboardScreen({navigation}) {
                             </View>
                             <View style={{alignItems: 'center', borderRadius: '50'}}>
                                 <TouchableOpacity
-                                    onPress={() => setLink(ele.survey_link)}
+                                    onPress={() => {
+                                        setLink(ele.survey_link)
+                                        navigation.navigate('Web View', {link: ele.survey_link})}
+                                    // onPress={() => {navigation.navigate("")setLink(ele.survey_link)}
+                                        }
                                     style={[styles.survey_button, {
                                         backgroundColor: '#378C3C',
                                     }]}

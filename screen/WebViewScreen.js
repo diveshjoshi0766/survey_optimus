@@ -8,13 +8,14 @@ function WebViewScreen({ route, navigation }) {
     console.log(uri)
     console.log(navigation)
     console.log(uri)
+    console.log(link)
         return (
         Platform.OS === "web" ? (
-        <iframe src={uri} height={'100%'} width={'100%'} />
+        <iframe src={link} height={'100%'} width={'100%'} />
         ) : (
         <View style={{ flex: 1 }}>
             <WebView
-            src={uri}
+            source={{ uri: `${link}` }}
             style={{marginTop: 22, flex: 1}}
             />
         </View>

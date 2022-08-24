@@ -39,23 +39,6 @@ import ProfileSurvey3 from '../screen/ProfileSurvey3';
 
 const Stack = createNativeStackNavigator();
 
-// (userInfo.message !== undefined && userInfo.message.split('!!')[0] == 'Congratulations') ? (
-//   <>
-//     <Stack.Screen name="Profile Survey" component={ProfileSurvey1} screenOptions={{headerShown: false}}/>
-//     <Stack.Screen
-//       name="Home"
-//       component={MyTabScreen}
-//       options={{headerShown: false}}
-//     />
-//     <Stack.Screen
-//       name="End Of Profile Survey Screen"
-//       component={EndOfProfileSurveyScreen}
-//       options={{headerShown: false}}
-//     />
-//   </>
-// ) :
-
-
 
 const Navigation = () => {
   const {userInfo, splashLoading} = useContext(AuthContext);
@@ -237,7 +220,7 @@ const Navigation = () => {
             options={{headerStyle: {
               backgroundColor: '#378C3C'
             },
-            title: 'Spinner Survey',
+            title: '',
             headerTitleStyle: {
               color: 'white'
             }
