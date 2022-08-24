@@ -129,7 +129,7 @@ export default function SpinnerScreen({navigation}) {
                         else{
                             {/* let path = `../assets/${ele.Incentive}/.png` */}
                             return (
-                        <TouchableOpacity style={styles.products} key={val} onPress={() => {setLink(ele.Link)}}>
+                        <TouchableOpacity style={styles.products} key={val} onPress={() => {handleNavigation(ele.Link)}}>
                             <View style={[styles.center_, {flex: 0.8, alignItems: 'center', marginTop: 0}]}>
                                 <ImageBackground style={styles.stretch}
                                     source={require("../assets/spinner_edited.gif")} resizeMode="cover">
