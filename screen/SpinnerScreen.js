@@ -83,8 +83,6 @@ export default function SpinnerScreen({navigation}) {
                         <Text style={styles.text_box_black_points}>{panelist_basic_details == null ? userInfo.Result && userInfo.Result.profilePercentage : panelist_basic_details.Results.profilePercentage}%</Text>
                     </View>
                 </View>
-                    
-
                 {
                     comments && comments.map((ele, val) => {  
                         let path = `../assets/${ele.Incentive}.png`
